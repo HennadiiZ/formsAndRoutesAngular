@@ -1,4 +1,21 @@
-# FirstAngularJSP
+# formsAndRoutesAngular
+
+
+Home,
+Sign-up (First Name, Last Name, Email, Password, Confirm password, submit button),
+Log-in (Email, Password, submit button, Forgot Password button),
+Forgot Password (Your email, reset password button),
+Validation,
+Routes.
+
+
+
+
+
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
