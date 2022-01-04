@@ -1,0 +1,50 @@
+
+<div class="container">
+    <form action="" class="sign-up form" [formGroup]='logInForm' (ngSubmit)="submit()">
+        <div class="registration-block">
+            <!-- <h2>Log in:</h2> -->
+            <button href="" class="registration-block__item"><h2>Log in:</h2></button>
+            <button href="" routerLinkActive="active" class="registration-block__item" (click)="goToForgotPass()"><h2>Forgot Password?</h2></button>
+        </div>
+
+        
+
+
+        
+
+        <div class="form-item">
+            <label>Email*</label>
+            <input type="text" placeholder="Email" formControlName="email">
+            <div  
+            *ngIf="logInForm.get('email')!.invalid && logInForm.get('email')!.touched"
+            class="validation">
+              <small *ngIf="logInForm.get('email')!.errors!['required']"
+              >This field is required and cannot be empty</small>
+
+              <small *ngIf="logInForm.get('email')!.errors!['email']"
+              >this email address is incorrect</small>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label>Password*</label>
+            <input type="password" placeholder="Password" formControlName="password">
+            <div 
+            *ngIf="logInForm.get('password')!.invalid && logInForm.get('password')!.touched"
+            class="validation">
+            <small *ngIf="logInForm.get('password')!.errors!['required']"
+            >This field is required and cannot be empty</small>
+
+            <small *ngIf="logInForm.get('password')!.errors!['minlength']"
+            >This field must contain at least  {{logInForm.get('password')!.errors!['minlength']!.requiredLength}} characters, now it contains {{logInForm.get('password')!.errors!['minlength']!.actualLength}}...
+            </small>
+            </div>
+        </div>
+
+
+        
+
+        <button class="btn" type="submit" [disabled]="logInForm.invalid">Submit</button>
+
+    </form>
+</div>
